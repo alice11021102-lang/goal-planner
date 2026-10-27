@@ -1,0 +1,27 @@
+:root{--bg:#f6f7f4;--card:#fff;--tx:#1d2a24;--mu:#66736c;--ac:#1f8a5b;--ac2:#d9822b;--bd:#e1e5df;--ok:#1f8a5b;--wa:#c98a14;--bad:#c4472f;--soft:#eef4f0;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111815;--card:#1a231f;--tx:#e8eee9;--mu:#93a39a;--ac:#47c48a;--ac2:#f0a255;--bd:#2b3832;--ok:#47c48a;--wa:#e5b343;--bad:#ef7a62;--soft:#202c26;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111815;--card:#1a231f;--tx:#e8eee9;--mu:#93a39a;--ac:#47c48a;--ac2:#f0a255;--bd:#2b3832;--ok:#47c48a;--wa:#e5b343;--bad:#ef7a62;--soft:#202c26;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.6 -apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif}
+.wrap{max-width:1000px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:24px;margin:8px 0 2px}h2{font-size:16px;margin:0 0 12px}
+.sub{color:var(--mu);margin:0 0 18px}
+.grid{display:grid;grid-template-columns:320px 1fr;gap:16px}
+@media(max-width:800px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px;margin-bottom:16px}
+label{display:block;font-size:13px;color:var(--mu);margin:10px 0 4px}
+input,select{width:100%;padding:9px 10px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--tx);font-size:15px}
+.chk{display:flex;gap:8px;align-items:center;margin-top:12px;font-size:13px;color:var(--mu)}.chk input{width:auto}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.badge{display:inline-block;padding:3px 12px;border-radius:99px;font-weight:600;font-size:13px;color:#fff}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:600px){.kpis{grid-template-columns:1fr}}
+.kpi{background:var(--soft);border-radius:10px;padding:12px}
+.kpi small{color:var(--mu);display:block}.kpi b{font-size:20px}.kpi em{font-style:normal;font-size:12px;color:var(--mu)}
+.scroll{overflow-x:auto}
+svg{width:100%;height:auto;display:block}
+table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:7px 6px;border-bottom:1px solid var(--bd);text-align:right}th:first-child,td:first-child{text-align:left}
+.tip{padding:10px 12px;border-left:3px solid var(--ac);background:var(--soft);border-radius:6px;margin:8px 0;font-size:14px}
+.note{font-size:12px;color:var(--mu)}
+code{background:var(--soft);padding:1px 6px;border-radius:4px;font-size:13px}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💰</text></svg>">
+<title>目標理財規劃器</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<h1>💰 目標理財規劃器</h1>
+<p class="sub">設定目標 → 用 PV／FV／PMT 反推需要的本金、每月儲蓄與報酬 → 取得具體建議</p>
+<div class="grid">
+<div>
+<div class="card">
+<h2>① 設定你的目標</h2>
+<label>目標類型</label>
+<select id="preset">
+<option value="retire">退休金</option><option value="house">買房頭期款</option><option value="edu">子女教育金</option><option value="travel">夢想旅行</option><option value="emerg">緊急預備金</option><option value="custom">自訂</option>
+</select>
+<label>目標金額（NT$）</label><input id="target" type="number" value="10000000">
+<label>達成年限（年）</label><input id="years" type="number" value="25" min="1" max="60">
+<div class="chk"><input id="real" type="checkbox" checked><span>目標金額以「今日購買力」計算（自動換算通膨）</span></div>
+</div>
+<div class="card">
+<h2>② 目前財務狀況</h2>
+<label>目前已備本金 PV（NT$）</label><input id="pv" type="number" value="500000">
+<label>每月可投入 PMT（NT$）</label><input id="pmt" type="number" value="15000">
+<div class="row2">
+<div><label>預期年報酬率 %</label><input id="rate" type="number" value="6" step="0.1"></div>
+<div><label>通膨率 %</label><input id="infl" type="number" value="2" step="0.1"></div>
+</div>
+<p class="note">採月複利、期末投入。報酬為假設值，非保證。</p>
+</div>
+</div>
+<div id="out"></div>
+</div>
+<div class="card">
+<h2>公式備忘</h2>
+<p class="note" style="margin:0">r＝年報酬率÷12，n＝年數×12，g＝(1+r)ⁿ<br>
+<code>FV = PV·g + PMT·(g−1)/r</code>　<code>PMT = (FV − PV·g)·r/(g−1)</code>　<code>PV = FV/g − PMT·(1−1/g)/r</code></p>
+</div>
+<p class="note">本工具僅供試算與教育用途，不構成投資建議。</p>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
